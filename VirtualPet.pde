@@ -1,29 +1,10 @@
-
-import cc.arduino.*;
-import org.firmata.*;
-
-import processing.serial.*;
-import cc.arduino.*;
-Arduino arduino;
-
 void setup(){
   size(500,500);
-  arduino = new Arduino(this, Arduino.list()[1], 57600);
 }
 void draw(){
-  //arduino movement
-  background(192);
-  int y = arduino.analogRead(5);
-  int x = arduino.analogRead(5);
-  System.out.println(y);
-  System.out.println(x);
-  if (y <= 180) {
-    y = 180; }
-  if (y >= 220) {
-    y = 220; }
   fill(86,114,240);
   //tail
-  triangle(340,360,320,390,450,2*y);
+  triangle(340,360,320,390,450,420);
   //body
   pushMatrix();
   translate(width/2, height/2);
